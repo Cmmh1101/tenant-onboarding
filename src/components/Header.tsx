@@ -11,8 +11,15 @@ export function Header({ dict, locale, step }: { dict: Dictionary; locale: Local
   return (
     <header className="bg-teal">
       <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-4 py-3.5 sm:px-7">
-        <div className="flex items-center rounded-lg bg-white px-2.5 py-1.5 shadow-sm">
-          <Image src="/edugogo-logo.png" alt="EDUGOGO" width={240} height={120} priority className="h-6 w-auto sm:h-7" />
+        <div className="flex items-center">
+          <Image
+            src="/edugogo-logo-transparent.png"
+            alt="EDUGOGO"
+            width={1200}
+            height={463}
+            priority
+            className="h-7 w-auto brightness-0 invert sm:h-8"
+          />
         </div>
         <div className="flex items-center gap-4">
           {step >= 1 && (

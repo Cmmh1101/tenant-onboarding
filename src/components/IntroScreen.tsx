@@ -5,7 +5,7 @@ import type { Locale } from "@/lib/i18n/config";
 import type { Dictionary } from "@/lib/i18n/getDictionary";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
-const STEP_ICONS = ["🏫", "🔄", "📣", "🏛", "🎓", "⚙️"];
+const STEP_ICONS = ["🏫", "🔄", "📣", "👪", "📊", "⚙️"];
 const QUESTION_COUNTS = [6, 3, 6, 3, 6, 5];
 
 export function IntroScreen({ dict, locale, onStart }: { dict: Dictionary; locale: Locale; onStart: () => void }) {
