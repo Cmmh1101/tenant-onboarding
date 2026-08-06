@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --teal: #005e5d;
+  --teal-mid: #287a78;
+  --teal-lt: #e0f0ef;
+  --teal-xlt: #f4f8f8;
+
+  --orange: #df7c24;
+  --orange-mid: #f38f1d;
+
+  --purple: #942a81;
+  --purple-dk: #7a2069;
+
+  --background: #ffffff;
+  --foreground: #1f2937;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-teal: var(--teal);
+  --color-teal-mid: var(--teal-mid);
+  --color-teal-lt: var(--teal-lt);
+  --color-teal-xlt: var(--teal-xlt);
+  --color-orange: var(--orange);
+  --color-orange-mid: var(--orange-mid);
+  --color-purple: var(--purple);
+  --color-purple-dk: var(--purple-dk);
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--teal-xlt);
+  color: var(--foreground);
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-step-in {
+  animation: fadeSlideIn 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-7px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+.animate-shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.animate-pop-in {
+  animation: popIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin 0.7s linear infinite;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch-wrapper { padding: 0; }
+input[type="color"]::-webkit-color-swatch { border: none; border-radius: 6px; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--teal-xlt); }
+::-webkit-scrollbar-thumb { background: rgba(0, 94, 93, 0.25); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0, 94, 93, 0.45); }
