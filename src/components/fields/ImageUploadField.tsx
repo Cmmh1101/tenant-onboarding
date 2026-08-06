@@ -86,7 +86,7 @@ export function ImageUploadField({ label, hint, value, onChange, maxSizeMb = 2, 
           <button
             type="button"
             onClick={() => { onChange(null); if (inputRef.current) inputRef.current.value = ""; }}
-            className="flex items-center gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3.5 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-100"
+            className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3.5 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-100"
           >
             ✕ {strings.removeFile}
           </button>

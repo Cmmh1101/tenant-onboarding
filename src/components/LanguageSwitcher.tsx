@@ -38,7 +38,7 @@ export function LanguageSwitcher({
             key={l}
             type="button"
             onClick={() => switchTo(l)}
-            className={`rounded-[6px] px-2.5 py-1 text-[11.5px] font-bold uppercase tracking-wide transition ${
+            className={`cursor-pointer rounded-[6px] px-2.5 py-1 text-[11.5px] font-bold uppercase tracking-wide transition ${
               active ? activeClass : inactiveClass
             }`}
           >

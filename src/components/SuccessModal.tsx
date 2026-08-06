@@ -40,7 +40,7 @@ export function SuccessModal({ dict, visible, institutionName, email, status, er
         <button
           type="button"
           onClick={onClose}
-          className="mt-4 inline-flex items-center gap-2 rounded-lg border-2 border-teal bg-teal px-6 py-2.5 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-teal-mid"
+          className="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-lg border-2 border-teal bg-teal px-6 py-2.5 text-sm font-semibold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-teal-mid"
         >
           ↻ {dict.modal.resendBtn}
         </button>

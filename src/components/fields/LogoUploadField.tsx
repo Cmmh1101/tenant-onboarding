@@ -127,7 +127,7 @@ export function LogoUploadField({
             <button
               type="button"
               onClick={() => { onChange(null); setDimensionWarning(""); if (inputRef.current) inputRef.current.value = ""; }}
-              className="absolute right-1.5 top-1.5 flex h-6 w-6 items-center justify-center rounded-full bg-white/90 text-xs text-red-600 shadow hover:bg-red-50"
+              className="absolute right-1.5 top-1.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-full bg-white/90 text-xs text-red-600 shadow hover:bg-red-50"
               title={strings.removeFile}
             >
               ✕

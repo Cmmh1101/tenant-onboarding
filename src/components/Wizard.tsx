@@ -73,7 +73,7 @@ export function Wizard({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                 <button
                   type="button"
                   onClick={goBack}
-                  className="flex items-center gap-2 rounded-lg border-2 border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-teal hover:bg-teal-lt hover:text-teal"
+                  className="flex cursor-pointer items-center gap-2 rounded-lg border-2 border-gray-300 bg-white px-5 py-2.5 text-sm font-semibold text-gray-700 transition hover:border-teal hover:bg-teal-lt hover:text-teal"
                 >
                   ← {dict.nav.back}
                 </button>
@@ -83,7 +83,7 @@ export function Wizard({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-orange px-6 py-2.5 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-orange-mid"
+                  className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-orange px-6 py-2.5 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-orange-mid"
                 >
                   {dict.nav.next} →
                 </button>
@@ -91,7 +91,7 @@ export function Wizard({ dict, locale }: { dict: Dictionary; locale: Locale }) {
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="flex items-center justify-center gap-2 rounded-lg bg-orange px-6 py-2.5 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-orange-mid disabled:cursor-not-allowed disabled:opacity-60"
+                  className="flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-orange px-6 py-2.5 text-sm font-bold text-white shadow-md transition hover:-translate-y-0.5 hover:bg-orange-mid disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {submitting ? dict.nav.submitting : `✈ ${dict.nav.submit}`}
                 </button>

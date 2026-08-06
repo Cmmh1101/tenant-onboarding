@@ -29,7 +29,7 @@ export function PasswordField({ label, hint, value, onChange, showLabel, hideLab
           type="button"
           onClick={() => setVisible((v) => !v)}
           title={visible ? hideLabel : showLabel}
-          className="border-l-[1.5px] border-gray-200 bg-teal-xlt px-3.5 text-gray-500 transition hover:bg-teal-lt hover:text-teal"
+          className="cursor-pointer border-l-[1.5px] border-gray-200 bg-teal-xlt px-3.5 text-gray-500 transition hover:bg-teal-lt hover:text-teal"
         >
           {visible ? "🙈" : "👁"}
         </button>

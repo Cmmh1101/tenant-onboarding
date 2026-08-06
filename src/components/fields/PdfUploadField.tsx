@@ -103,7 +103,7 @@ export function PdfUploadField({ label, hint, value, onChange, maxSizeMb = 8, st
           <button
             type="button"
             onClick={() => { onChange(null); if (inputRef.current) inputRef.current.value = ""; }}
-            className="flex flex-shrink-0 items-center gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-100"
+            className="flex flex-shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border border-red-200 bg-red-50 px-3 py-1.5 text-xs font-semibold text-red-600 hover:bg-red-100"
           >
             ✕ {strings.removeFile}
           </button>
