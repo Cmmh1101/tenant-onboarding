@@ -115,25 +115,32 @@ export function FormProvider({ children }: { children: React.ReactNode }) {
 
   const saveDraft = useCallback(() => {
     if (typeof window === "undefined") return;
+    // Once the form has been successfully submitted, never resurrect the
+    // just-cleared draft — otherwise the periodic/debounced autosave below
+    // would silently write the submitted values back to localStorage and a
+    // returning visitor (or a page refresh) would see stale, already-sent
+    // data instead of a blank form.
+    if (submitted) return;
     try {
       window.localStorage.setItem(DRAFT_KEY, JSON.stringify({ values, step, started }));
       setLastDraftSavedAt(Date.now());
     } catch {
       /* ignore quota errors */
     }
-  }, [values, step, started]);
+  }, [values, step, started, submitted]);
 
   // Autosave every 30s + whenever values change (debounced).
   useEffect(() => {
-    if (!hydrated.current) return;
+    if (!hydrated.current || submitted) return;
     const t = setTimeout(saveDraft, 800);
     return () => clearTimeout(t);
-  }, [values, step, started, saveDraft]);
+  }, [values, step, started, submitted, saveDraft]);
 
   useEffect(() => {
+    if (submitted) return;
     const interval = setInterval(saveDraft, 30000);
     return () => clearInterval(interval);
-  }, [saveDraft]);
+  }, [saveDraft, submitted]);
 
   const setField = useCallback((name: FieldName, value: string | boolean) => {
     setValues((prev) => ({ ...prev, [name]: value }));
